@@ -1,0 +1,28 @@
+<div class="container">
+  <p>&nbsp;</p>
+  <div class="row">
+      <div class="col-md-2 col-md-offset-3" align="right">
+        <%= image_tag @book.imgurl, {:style=>"width:180px; height:auto;"} %>
+      </div>
+      <div class="col-md-4">
+        <style type="text/css">p {padding:0px;margin:0px;}</style>
+
+        <p style="font-size:32px; font-weight:700;"><%= @book.title %>
+        <%= link_to edit_book_path(@book) do %>
+        <%= image_tag 'edit.png', class: 'img-edit', alt: 'Ažuriraj knjigu', title: 'Ažuriraj knjigu' %>
+        <% end %></p>
+        <p style="font-size:18px; font-weight:700;"><%= @book.autors.upcase %></p>
+        <p style="font-size:18px; font-weight:100;"><%= @book.publisher %> (<%= @book.year %>)</p>
+        <hr width="33%" align="left" style="margin: 10px 0px 10px 0px;">
+        <p style="font-size:14px; font-weight:100;"><strong>Žanr</strong>: <%= @book.genreid %> </p>
+        <p style="font-size:14px; font-weight:100;"><strong>Jezik</strong>: <%= @book.language %> </p>
+        <p style="font-size:14px; font-weight:100;"><strong>Stranica</strong>: <%= @book.pages %> </p>
+        <p style="font-size:14px; font-weight:100;"><%= truncate(@book.note, length: 200) %></p>
+      </div>
+
+  </div>
+  <h2>&nbsp;</h2>
+</div>
+
+
+<!-- ["id", "title", "autors", "edition", "publisher", "language", "year", "pages", "note", "imgurl", "genreid", "timestamps", "created_at", "updated_at"] -->

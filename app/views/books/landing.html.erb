@@ -1,0 +1,40 @@
+<p>&nbsp;</p>
+
+<div class="container" id="listKnjiga">
+  <table cellpadding="8" cellspacing="2" width="100%" border="1">
+    <thead>
+      <tr>
+        <td bgcolor="#D2F990" width="250" style="padding:8px; font-weight:700;">Naslov:</td>
+        <td bgcolor="#D2F990" width="100" style="padding:8px; font-weight:700;">Autori:</td>
+        <td bgcolor="#D2F990" width="50" style="padding:8px; font-weight:700;">Izdanje:</td>
+        <td bgcolor="#D2F990" width="50" style="padding:8px; font-weight:700;">Godina:</td>
+        <td bgcolor="#D2F990" width="150" style="padding:8px; font-weight:700;">Izdavač:</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @books.each do |knjiga| %>
+      <tr>
+        <td bgcolor="#e4e6e7" width="250" class="linija">
+          <%= link_to edit_book_path(knjiga) do %>
+          <%= image_tag 'edit.png', class: 'img-push-10px', alt: 'Ažuriraj'%>
+          <% end %>
+
+          <%= link_to book_path(knjiga.id), method: :delete, data: { confirm: "Zaista želiš ukloniti ovu knjigu:  #{knjiga.title} ?" } do %>
+          <%= image_tag 'delete.png', class: 'img-push-10px', alt: 'Izbriši'%>
+          <% end %>
+
+         <%= link_to knjiga.title, book_path(id: knjiga.id) %>
+          </td>
+        <td bgcolor="#e4e6e7" width="100" class="linija"><%= knjiga.autors %></td>
+        <td bgcolor="#e4e6e7" width="50" class="linija"><%= knjiga.edition %></td>
+        <td bgcolor="#e4e6e7" width="50" class="linija"><%= knjiga.year %></td>
+        <td bgcolor="#e4e6e7" width="150" class="linija"><%= knjiga.publisher %></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+
+<h2>&nbsp;</h2>

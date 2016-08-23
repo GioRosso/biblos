@@ -1,0 +1,60 @@
+<div class="container text-center">
+  <h2>Ažuriraj podatke o naslovu: <%= @book.title %></h2>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4"">
+  <%= form_for(@book) do |b|%>
+
+  <div class="form-group">
+    <%= b.label :title %>
+    <%= b.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :autors %>
+    <%= b.text_field :autors, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :edition %>
+    <%= b.text_field :edition, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :publisher %>
+    <%= b.text_field :publisher, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :year %>
+    <%= b.text_field :year, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :language %>
+    <%= b.text_field :language, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :pages %>
+    <%= b.text_field :pages, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :note %>
+    <%= b.text_area(:note, cols: 20, rows:10, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= b.label :imgurl %>
+    <%= b.text_field :imgurl, class: 'form-control' %>
+  </div>
+
+<div class="form-group">
+<%= b.submit 'Ažuriraj informacije', class: 'btn btn-danger text-center btn-large' %>
+</div>
+
+  <% end %>
+  </div>
+</div>
